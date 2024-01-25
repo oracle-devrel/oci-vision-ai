@@ -1,0 +1,391 @@
+{
+  "errors": [],
+  "image_classification_model_version": null,
+  "image_objects": [
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.3232421875,
+            "y": 0.3697916666666667
+          },
+          {
+            "x": 0.458984375,
+            "y": 0.3697916666666667
+          },
+          {
+            "x": 0.458984375,
+            "y": 0.6336805555555556
+          },
+          {
+            "x": 0.3232421875,
+            "y": 0.6336805555555556
+          }
+        ]
+      },
+      "confidence": 0.98203605,
+      "name": "Dog"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.43994140625,
+            "y": 0.3732638888888889
+          },
+          {
+            "x": 0.68408203125,
+            "y": 0.3732638888888889
+          },
+          {
+            "x": 0.68408203125,
+            "y": 0.9496527777777778
+          },
+          {
+            "x": 0.43994140625,
+            "y": 0.9496527777777778
+          }
+        ]
+      },
+      "confidence": 0.979139,
+      "name": "Dog"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.16162109375,
+            "y": 0.4288194444444444
+          },
+          {
+            "x": 0.41796875,
+            "y": 0.4288194444444444
+          },
+          {
+            "x": 0.41796875,
+            "y": 0.9149305555555556
+          },
+          {
+            "x": 0.16162109375,
+            "y": 0.9149305555555556
+          }
+        ]
+      },
+      "confidence": 0.97765905,
+      "name": "Dog"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.71337890625,
+            "y": 0.4409722222222222
+          },
+          {
+            "x": 0.80810546875,
+            "y": 0.4409722222222222
+          },
+          {
+            "x": 0.80810546875,
+            "y": 0.6605902777777778
+          },
+          {
+            "x": 0.71337890625,
+            "y": 0.6605902777777778
+          }
+        ]
+      },
+      "confidence": 0.9546947,
+      "name": "Bull"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.474609375,
+            "y": 0.2760416666666667
+          },
+          {
+            "x": 0.67236328125,
+            "y": 0.2760416666666667
+          },
+          {
+            "x": 0.67236328125,
+            "y": 0.4114583333333333
+          },
+          {
+            "x": 0.474609375,
+            "y": 0.4114583333333333
+          }
+        ]
+      },
+      "confidence": 0.93287665,
+      "name": "Car"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.08447265625,
+            "y": 0.2265625
+          },
+          {
+            "x": 0.50830078125,
+            "y": 0.2265625
+          },
+          {
+            "x": 0.50830078125,
+            "y": 0.5529513888888888
+          },
+          {
+            "x": 0.08447265625,
+            "y": 0.5529513888888888
+          }
+        ]
+      },
+      "confidence": 0.9303569,
+      "name": "Car"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.04052734375,
+            "y": 0.3793402777777778
+          },
+          {
+            "x": 0.158203125,
+            "y": 0.3793402777777778
+          },
+          {
+            "x": 0.158203125,
+            "y": 0.6284722222222222
+          },
+          {
+            "x": 0.04052734375,
+            "y": 0.6284722222222222
+          }
+        ]
+      },
+      "confidence": 0.9076961,
+      "name": "Bear"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.04052734375,
+            "y": 0.3802083333333333
+          },
+          {
+            "x": 0.15673828125,
+            "y": 0.3802083333333333
+          },
+          {
+            "x": 0.15673828125,
+            "y": 0.6267361111111112
+          },
+          {
+            "x": 0.04052734375,
+            "y": 0.6267361111111112
+          }
+        ]
+      },
+      "confidence": 0.8978946,
+      "name": "Dog"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.81396484375,
+            "y": 0.2465277777777778
+          },
+          {
+            "x": 0.931640625,
+            "y": 0.2465277777777778
+          },
+          {
+            "x": 0.931640625,
+            "y": 0.4305555555555556
+          },
+          {
+            "x": 0.81396484375,
+            "y": 0.4305555555555556
+          }
+        ]
+      },
+      "confidence": 0.8245619,
+      "name": "Van"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.5087890625,
+            "y": 0.3559027777777778
+          },
+          {
+            "x": 0.77294921875,
+            "y": 0.3559027777777778
+          },
+          {
+            "x": 0.77294921875,
+            "y": 0.6866319444444444
+          },
+          {
+            "x": 0.5087890625,
+            "y": 0.6866319444444444
+          }
+        ]
+      },
+      "confidence": 0.7997038,
+      "name": "Dog"
+    },
+    {
+      "bounding_polygon": {
+        "normalized_vertices": [
+          {
+            "x": 0.861328125,
+            "y": 0.0008680555555555555
+          },
+          {
+            "x": 1.0,
+            "y": 0.0008680555555555555
+          },
+          {
+            "x": 1.0,
+            "y": 0.3793402777777778
+          },
+          {
+            "x": 0.861328125,
+            "y": 0.3793402777777778
+          }
+        ]
+      },
+      "confidence": 0.7896218,
+      "name": "Tree"
+    }
+  ],
+  "image_text": null,
+  "labels": null,
+  "object_detection_model_version": "1.3.557",
+  "ontology_classes": [
+    {
+      "name": "Van",
+      "parent_names": [
+        "Car"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Car",
+      "parent_names": [
+        "Land vehicle"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Tree",
+      "parent_names": [
+        "Plant"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Bear",
+      "parent_names": [
+        "Wildlife",
+        "Carnivore"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Bull",
+      "parent_names": [
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Dog",
+      "parent_names": [
+        "Pet",
+        "Canine"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Mammal",
+      "parent_names": [
+        "Vertebrate"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Plant",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Land vehicle",
+      "parent_names": [
+        "Vehicle"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Wildlife",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Carnivore",
+      "parent_names": [
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Pet",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Canine",
+      "parent_names": [
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Vehicle",
+      "parent_names": [
+        "Transportation"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Vertebrate",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Animal",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Transportation",
+      "parent_names": [],
+      "synonym_names": []
+    }
+  ],
+  "text_detection_model_version": null
+}
