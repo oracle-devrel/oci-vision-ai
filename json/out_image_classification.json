@@ -1,0 +1,1347 @@
+{
+  "errors": [],
+  "image_classification_model_version": "1.5.97",
+  "image_objects": null,
+  "image_text": null,
+  "labels": [
+    {
+      "confidence": 0.9925129,
+      "name": "Dog"
+    },
+    {
+      "confidence": 0.9876839,
+      "name": "Vegetation"
+    },
+    {
+      "confidence": 0.9863116,
+      "name": "Metal"
+    },
+    {
+      "confidence": 0.9822804,
+      "name": "Fur"
+    },
+    {
+      "confidence": 0.9757159,
+      "name": "Paw"
+    },
+    {
+      "confidence": 0.9727112,
+      "name": "Dog collar"
+    },
+    {
+      "confidence": 0.9670426,
+      "name": "Animal"
+    },
+    {
+      "confidence": 0.95400804,
+      "name": "Cheek"
+    },
+    {
+      "confidence": 0.9539368,
+      "name": "Neck"
+    },
+    {
+      "confidence": 0.94974107,
+      "name": "Twig"
+    },
+    {
+      "confidence": 0.94956946,
+      "name": "Shadow"
+    },
+    {
+      "confidence": 0.9393667,
+      "name": "Carnivore"
+    },
+    {
+      "confidence": 0.8859971,
+      "name": "Puppy"
+    },
+    {
+      "confidence": 0.8802655,
+      "name": "Pet"
+    },
+    {
+      "confidence": 0.8742277,
+      "name": "Tooth"
+    },
+    {
+      "confidence": 0.8738174,
+      "name": "Caramel color"
+    },
+    {
+      "confidence": 0.833444,
+      "name": "Brick"
+    },
+    {
+      "confidence": 0.79489994,
+      "name": "Orange (Color)"
+    },
+    {
+      "confidence": 0.78642863,
+      "name": "Line"
+    },
+    {
+      "confidence": 0.7704021,
+      "name": "Wood stain"
+    },
+    {
+      "confidence": 0.7306541,
+      "name": "Mammal"
+    },
+    {
+      "confidence": 0.7281397,
+      "name": "Running"
+    },
+    {
+      "confidence": 0.727726,
+      "name": "Skin"
+    },
+    {
+      "confidence": 0.6943055,
+      "name": "Collar (Animal)"
+    },
+    {
+      "confidence": 0.68291336,
+      "name": "Grass"
+    },
+    {
+      "confidence": 0.68216795,
+      "name": "Organ (Biology)"
+    },
+    {
+      "confidence": 0.6419427,
+      "name": "Brickwork"
+    },
+    {
+      "confidence": 0.62637824,
+      "name": "Street"
+    },
+    {
+      "confidence": 0.5936721,
+      "name": "Fire"
+    },
+    {
+      "confidence": 0.5919373,
+      "name": "Morning"
+    },
+    {
+      "confidence": 0.5863498,
+      "name": "Nature"
+    },
+    {
+      "confidence": 0.58091515,
+      "name": "Lip"
+    },
+    {
+      "confidence": 0.580095,
+      "name": "Flame"
+    },
+    {
+      "confidence": 0.57634914,
+      "name": "Light"
+    },
+    {
+      "confidence": 0.5735473,
+      "name": "Human"
+    },
+    {
+      "confidence": 0.5724984,
+      "name": "Black Hair"
+    },
+    {
+      "confidence": 0.5713614,
+      "name": "Leash"
+    },
+    {
+      "confidence": 0.5699111,
+      "name": "Muscle"
+    },
+    {
+      "confidence": 0.56868804,
+      "name": "Tennis Ball"
+    },
+    {
+      "confidence": 0.566544,
+      "name": "Rodent"
+    },
+    {
+      "confidence": 0.56450856,
+      "name": "Forehead"
+    },
+    {
+      "confidence": 0.56290424,
+      "name": "Tartan"
+    },
+    {
+      "confidence": 0.5621534,
+      "name": "Calf (Body Part)"
+    },
+    {
+      "confidence": 0.55964357,
+      "name": "Slope"
+    },
+    {
+      "confidence": 0.5570556,
+      "name": "Path"
+    },
+    {
+      "confidence": 0.55677664,
+      "name": "Dog walking"
+    },
+    {
+      "confidence": 0.55651355,
+      "name": "Wool"
+    },
+    {
+      "confidence": 0.552124,
+      "name": "Wire fencing"
+    },
+    {
+      "confidence": 0.5509408,
+      "name": "Paint"
+    },
+    {
+      "confidence": 0.55057174,
+      "name": "Road"
+    },
+    {
+      "confidence": 0.5477097,
+      "name": "Elbow"
+    },
+    {
+      "confidence": 0.5474888,
+      "name": "Wood"
+    },
+    {
+      "confidence": 0.5474404,
+      "name": "Plant stem"
+    },
+    {
+      "confidence": 0.54704046,
+      "name": "Flooring"
+    },
+    {
+      "confidence": 0.5469907,
+      "name": "Eyewear"
+    },
+    {
+      "confidence": 0.5430625,
+      "name": "Pest"
+    },
+    {
+      "confidence": 0.5409178,
+      "name": "Symmetry"
+    },
+    {
+      "confidence": 0.5375385,
+      "name": "Iron (Material)"
+    },
+    {
+      "confidence": 0.53719485,
+      "name": "Walking"
+    },
+    {
+      "confidence": 0.53658867,
+      "name": "Wall"
+    },
+    {
+      "confidence": 0.5360715,
+      "name": "Tongue"
+    },
+    {
+      "confidence": 0.5354439,
+      "name": "Home"
+    },
+    {
+      "confidence": 0.53329307,
+      "name": "Eyelash"
+    },
+    {
+      "confidence": 0.53239095,
+      "name": "Camouflage"
+    },
+    {
+      "confidence": 0.5310138,
+      "name": "Asphalt"
+    },
+    {
+      "confidence": 0.5289547,
+      "name": "Flesh"
+    },
+    {
+      "confidence": 0.5283702,
+      "name": "Roof"
+    },
+    {
+      "confidence": 0.5279101,
+      "name": "Animal shelter"
+    },
+    {
+      "confidence": 0.5273569,
+      "name": "Mat"
+    },
+    {
+      "confidence": 0.5258649,
+      "name": "Pet food"
+    },
+    {
+      "confidence": 0.5256775,
+      "name": "Liquid"
+    },
+    {
+      "confidence": 0.5250257,
+      "name": "Trunk (Tree)"
+    },
+    {
+      "confidence": 0.5247397,
+      "name": "Plant"
+    },
+    {
+      "confidence": 0.52340764,
+      "name": "Bolonka"
+    },
+    {
+      "confidence": 0.5232567,
+      "name": "Walkway"
+    },
+    {
+      "confidence": 0.52288985,
+      "name": "Lap"
+    },
+    {
+      "confidence": 0.5212907,
+      "name": "Woolen"
+    },
+    {
+      "confidence": 0.5211483,
+      "name": "Arena"
+    },
+    {
+      "confidence": 0.5207741,
+      "name": "Leaf"
+    },
+    {
+      "confidence": 0.52069765,
+      "name": "Pattern"
+    },
+    {
+      "confidence": 0.5194825,
+      "name": "Eating"
+    },
+    {
+      "confidence": 0.51897675,
+      "name": "Leopard"
+    },
+    {
+      "confidence": 0.51777476,
+      "name": "Plastic"
+    },
+    {
+      "confidence": 0.51763934,
+      "name": "Cat"
+    },
+    {
+      "confidence": 0.51757586,
+      "name": "Human foot"
+    },
+    {
+      "confidence": 0.5172581,
+      "name": "Jumping"
+    },
+    {
+      "confidence": 0.51599485,
+      "name": "Cage"
+    },
+    {
+      "confidence": 0.5158113,
+      "name": "Black-and-white"
+    },
+    {
+      "confidence": 0.5153024,
+      "name": "Tile"
+    },
+    {
+      "confidence": 0.5151112,
+      "name": "Circle"
+    },
+    {
+      "confidence": 0.514945,
+      "name": "Carpet"
+    },
+    {
+      "confidence": 0.51465267,
+      "name": "Earth"
+    },
+    {
+      "confidence": 0.5143964,
+      "name": "Tile flooring"
+    },
+    {
+      "confidence": 0.5143404,
+      "name": "Wrinkle"
+    },
+    {
+      "confidence": 0.5143087,
+      "name": "Electronic device"
+    },
+    {
+      "confidence": 0.51347095,
+      "name": "Moss"
+    },
+    {
+      "confidence": 0.5131889,
+      "name": "Wafer"
+    },
+    {
+      "confidence": 0.5131782,
+      "name": "Night"
+    },
+    {
+      "confidence": 0.5130151,
+      "name": "Logo"
+    },
+    {
+      "confidence": 0.5128291,
+      "name": "Symbol"
+    },
+    {
+      "confidence": 0.51282394,
+      "name": "Wrist"
+    },
+    {
+      "confidence": 0.51280975,
+      "name": "Wolf"
+    },
+    {
+      "confidence": 0.5126002,
+      "name": "Smoke"
+    },
+    {
+      "confidence": 0.51259625,
+      "name": "Eyebrow"
+    },
+    {
+      "confidence": 0.51256496,
+      "name": "Leather"
+    },
+    {
+      "confidence": 0.5120034,
+      "name": "Wicker"
+    },
+    {
+      "confidence": 0.5119448,
+      "name": "Wildlife"
+    },
+    {
+      "confidence": 0.51182544,
+      "name": "Sidewalk"
+    },
+    {
+      "confidence": 0.51158786,
+      "name": "Havanese"
+    },
+    {
+      "confidence": 0.51128834,
+      "name": "Mesh"
+    },
+    {
+      "confidence": 0.5112687,
+      "name": "Woven fabric"
+    },
+    {
+      "confidence": 0.5110157,
+      "name": "Audio equipment"
+    },
+    {
+      "confidence": 0.510875,
+      "name": "Isopod"
+    },
+    {
+      "confidence": 0.51070285,
+      "name": "Tarmac"
+    },
+    {
+      "confidence": 0.51063055,
+      "name": "Squirrel"
+    },
+    {
+      "confidence": 0.5106215,
+      "name": "Public space"
+    },
+    {
+      "confidence": 0.510599,
+      "name": "Rope"
+    },
+    {
+      "confidence": 0.5105091,
+      "name": "Fluid"
+    },
+    {
+      "confidence": 0.5104463,
+      "name": "Skunk"
+    },
+    {
+      "confidence": 0.5102034,
+      "name": "Basket"
+    },
+    {
+      "confidence": 0.510028,
+      "name": "Text"
+    },
+    {
+      "confidence": 0.5099149,
+      "name": "Blossom"
+    },
+    {
+      "confidence": 0.50940424,
+      "name": "Slate"
+    },
+    {
+      "confidence": 0.5091735,
+      "name": "Small animal supply"
+    },
+    {
+      "confidence": 0.5091241,
+      "name": "Torso"
+    },
+    {
+      "confidence": 0.508835,
+      "name": "Lawn"
+    },
+    {
+      "confidence": 0.5088328,
+      "name": "Handrail"
+    },
+    {
+      "confidence": 0.50875235,
+      "name": "Floor"
+    },
+    {
+      "confidence": 0.5084977,
+      "name": "Red Carpet"
+    },
+    {
+      "confidence": 0.50841206,
+      "name": "Beetle"
+    }
+  ],
+  "object_detection_model_version": null,
+  "ontology_classes": [
+    {
+      "name": "Torso",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wrinkle",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Lawn",
+      "parent_names": [
+        "Grass"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Carpet",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Forehead",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Human foot",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Pest",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wildlife",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Beetle",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Flooring",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Street",
+      "parent_names": [
+        "Urban",
+        "Road"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Trunk (Tree)",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Tile flooring",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Sidewalk",
+      "parent_names": [
+        "Path"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Dog",
+      "parent_names": [
+        "Pet",
+        "Canine"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Flame",
+      "parent_names": [
+        "Fire"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Tartan",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Human",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Public space",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Twig",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Caramel color",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Mesh",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Arena",
+      "parent_names": [
+        "Building"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Line",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Black Hair",
+      "parent_names": [
+        "Hair"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Orange (Color)",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Rope",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Small animal supply",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Animal",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Running",
+      "parent_names": [
+        "Sport"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Audio equipment",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Squirrel",
+      "parent_names": [
+        "Rodent"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Woven fabric",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Mat",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Iron (Material)",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Leather",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Tarmac",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Plastic",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Slope",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wrist",
+      "parent_names": [
+        "Hand"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Eyelash",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Organ (Biology)",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Leaf",
+      "parent_names": [
+        "Plant"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Neck",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wolf",
+      "parent_names": [
+        "Carnivore"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Elbow",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Handrail",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Eyewear",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Nature",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Path",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Pattern",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Fur",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Leash",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Black-and-white",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Road",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Electronic device",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Text",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wood stain",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wire fencing",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Dog collar",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wicker",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Lip",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Fire",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Lap",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Tooth",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Bolonka",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Dog walking",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Calf (Body Part)",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Plant stem",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Tongue",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Night",
+      "parent_names": [
+        "Nature"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Moss",
+      "parent_names": [
+        "Plant"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Paw",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Morning",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Metal",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Grass",
+      "parent_names": [
+        "Plant"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Smoke",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Eyebrow",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Walkway",
+      "parent_names": [
+        "Path"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Mammal",
+      "parent_names": [
+        "Vertebrate"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Asphalt",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Camouflage",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Light",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Muscle",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wafer",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Circle",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Fluid",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Puppy",
+      "parent_names": [
+        "Dog"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Paint",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Walking",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Vegetation",
+      "parent_names": [
+        "Plant"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Cat",
+      "parent_names": [
+        "Pet",
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Animal shelter",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Skin",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Havanese",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Jumping",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Slate",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Skunk",
+      "parent_names": [
+        "Wildlife",
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Wall",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Cage",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Cheek",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Symbol",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Pet food",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Shadow",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Basket",
+      "parent_names": [
+        "Container"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Tennis Ball",
+      "parent_names": [
+        "Ball"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Earth",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Roof",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Plant",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Brickwork",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Flesh",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Leopard",
+      "parent_names": [
+        "Wildlife",
+        "Carnivore"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Isopod",
+      "parent_names": [
+        "Marine invertebrates"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Rodent",
+      "parent_names": [
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Home",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Symmetry",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Eating",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Floor",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Wood",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Collar (Animal)",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Red Carpet",
+      "parent_names": [
+        "Premiere"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Tile",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Carnivore",
+      "parent_names": [
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Logo",
+      "parent_names": [
+        "Symbol"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Liquid",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Brick",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Woolen",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Blossom",
+      "parent_names": [
+        "Plant"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Wool",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Pet",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Building",
+      "parent_names": [
+        "Construction"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Ball",
+      "parent_names": [
+        "Sports equipment"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Urban",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Sport",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Container",
+      "parent_names": [
+        "Tool"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Marine invertebrates",
+      "parent_names": [
+        "Invertebrate"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Hair",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Hand",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Canine",
+      "parent_names": [
+        "Mammal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Vertebrate",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Premiere",
+      "parent_names": [
+        "Fashion"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Sports equipment",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Invertebrate",
+      "parent_names": [
+        "Animal"
+      ],
+      "synonym_names": []
+    },
+    {
+      "name": "Construction",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Fashion",
+      "parent_names": [],
+      "synonym_names": []
+    },
+    {
+      "name": "Tool",
+      "parent_names": [],
+      "synonym_names": []
+    }
+  ],
+  "text_detection_model_version": null
+}

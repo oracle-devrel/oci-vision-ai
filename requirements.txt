@@ -1,0 +1,4 @@
+oci
+ujson
+opencv-python
+Pillow
