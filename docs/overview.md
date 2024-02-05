@@ -5,7 +5,9 @@ This is an overview of what Oracle Cloud Infrastructure Vision (a.k.a. OCI Visio
 Of course, the domain we're going to observe is specifically going to focus on Computer Vision, a branch of Artificial Intelligence, that aims to use visual data to automate, or improve the quality of an application.
 
 OCI Vision is a versatile service that focuses on this. We (the users) can access these services in the following ways:
+Generative AI Service
 
+Unlock the power of generative AI models equipped with advanced language comprehension for building the next generation of enterprise applications. Oracle Cloud Infrastructure (OCI) Generative AI is a fully managed service available via API to seamlessly integrate these versatile language models into a wide range of use cases, including writing assistance, summarization, and chat.
 - Using an OCI SDK: seamless interaction with your favorite programming language, without needing to create your own custom implementation / framework.
 - Using the OCI Console: easy-to-use, browser-based interface, by accessing your OCI account and using the services with the web interface provided by Oracle.
 - Using the OCI Command-Line Interface (CLI): Quick access and full functionality without programming. The CLI is a package that allows you to use a terminal to operate with OCI.
@@ -49,3 +51,13 @@ Here's a list of supported file formats:
 Oracle Cloud Infrastructure Vision is a robust, flexible and cost-effective service for Computer Vision tasks. Oh, and extremely speedy!
 
 Whether you're dealing with images or documents, OCI Vision has all the tools you need, so make sure to give them a try.
+
+## Demo
+
+[OCI Vision Overview - Exploring the Service](https://www.youtube.com/watch?v=eyJm7OlaRBk&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=4)
+
+## Tutorial
+
+Here’s an use case being solved with OCI Vision + Python:
+
+[App Pattern: OCI Vision Customized Object Detector in Python](https://www.youtube.com/watch?v=B9EmMkqnoGQ&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=2)
