@@ -56,13 +56,22 @@ Oracle Cloud Infrastructure Vision is a robust, flexible and cost-effective serv
 
 Whether you're dealing with images or documents, OCI Vision has all the tools you need, so make sure to give them a try.
 
-## URLs
-* Nothing at this time
+## Demo
+
+[OCI Vision Overview - Exploring the Service](https://www.youtube.com/watch?v=eyJm7OlaRBk&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=4)
+
+## Tutorial
+
+Here’s an use case being solved with OCI Vision + Python:
+
+[App Pattern: OCI Vision Customized Object Detector in Python](https://www.youtube.com/watch?v=B9EmMkqnoGQ&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=2)
 
 ## Contributing
+
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
 
 ## License
+
 Copyright (c) 2022 Oracle and/or its affiliates.
 
 Licensed under the Universal Permissive License (UPL), Version 1.0.
