@@ -1,6 +1,7 @@
 # coding: utf-8
 # DRONE VISION v1 
 # Author : Antoine GOUEDARD
+# edited by @jasperan to modify original functionality
 
 import argparse
 import datetime
@@ -19,6 +20,7 @@ import logging
 from PIL import Image
 import shutil
 import moviepy.video.io.ImageSequenceClip
+from natsort import natsorted
 
 
 parser = argparse.ArgumentParser(description='Process video file.')
@@ -291,28 +293,28 @@ def stream_process(file_dir, nb_frames_sent,dict,lock) :
     print('Video Properties: {}x{}'.format(image.shape[1], image.shape[0]))    
     thread_list = []
     while success:
-        #if i < 500:
-        #cv2.imshow('image', image)
-        #key = cv2.waitKey(3000)#pauses for 3 seconds before fetching next image
-        #if key == 27:#if ESC is pressed, exit loop
-        #    cv2.destroyAllWindows()
-        #    break
-        thread = threading.Thread(target=analyzeImage, args=(image,i,length,dict,lock,))
-        thread.start()
-        thread_list.append(thread)
-        nb_frames_sent= nb_frames_sent + 1        
-        #logger.debug('step: '+str(i)+' ,number of frames sent to OCI : '+str(nb_frames_sent)+' ,frame number : '+str(frame_number) + ' ,dict size : '+str(len(dict)))
-        print('[DECOMPOSE][{}/{}]: {}%'.format(i, length, ((i/length) * 100)))
+        #if i < 100:
+            #cv2.imshow('image', image)
+            #key = cv2.waitKey(3000)#pauses for 3 seconds before fetching next image
+            #if key == 27:#if ESC is pressed, exit loop
+            #    cv2.destroyAllWindows()
+            #    break
+            thread = threading.Thread(target=analyzeImage, args=(image,i,length,dict,lock,))
+            thread.start()
+            thread_list.append(thread)
+            nb_frames_sent= nb_frames_sent + 1        
+            #logger.debug('step: '+str(i)+' ,number of frames sent to OCI : '+str(nb_frames_sent)+' ,frame number : '+str(frame_number) + ' ,dict size : '+str(len(dict)))
+            print('[DECOMPOSE][{}/{}]: {}%'.format(i, length, ((i/length) * 100)))
 
-        #c2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file      
-        success, image = vidcap.read()
-        #try:
-        # img object is our image
-        #    pil_img = Image.fromarray(image)
-        #except (AttributeError):
-        #    count+= 1
-        #    continue
-        i += 1
+            #c2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file      
+            success, image = vidcap.read()
+            #try:
+            # img object is our image
+            #    pil_img = Image.fromarray(image)
+            #except (AttributeError):
+            #    count+= 1
+            #    continue
+            i += 1
         #else: break
     for x in thread_list:
         x.join() # wait for all threads to finish before moving on.
@@ -345,7 +347,8 @@ def create_video(image_folder: str, video_name: str):
     image_files = [os.path.join(image_folder,img)
                 for img in os.listdir(image_folder)
                 if img.endswith(".jpg")]
-    clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(image_files, fps=fps)
+    file_list_sorted = natsorted(image_files,reverse=False)  # Sort the images
+    clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(file_list_sorted, fps=fps)
     clip.write_videofile('../output/{}'.format(video_name))
     print('Wrote Video File to ../output/{}'.format(video_name))
     # cleanup directories
