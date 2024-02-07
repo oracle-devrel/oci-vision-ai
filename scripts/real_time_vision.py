@@ -316,6 +316,9 @@ def stream_process(file_dir, nb_frames_sent,dict,lock) :
             #    continue
             i += 1
         #else: break
+    # execution of stream_process needs to be
+    # threaded and blocking, in order not to
+    # miss frames
     for x in thread_list:
         x.join() # wait for all threads to finish before moving on.
 
@@ -388,13 +391,11 @@ out = cv2.VideoWriter(file_to_write, cv2.VideoWriter_fourcc(*'DIVX'), desired_fp
 # Execute the command and generate a binary video stream in stdout
 proc = sp.Popen(cmd_to_execute, stdout=sp.PIPE, shell=True, cwd=dir_path, bufsize=10**8)
 
-# execution of stream_process needs to be
-# threaded and blocking, in order not to
-# miss frames
-thread = threading.Thread(target=stream_process, args=(file_dir, nb_frames_sent,dict,lock,))
+
+'''thread = threading.Thread(target=stream_process, args=(file_dir,nb_frames_sent,dict,lock,))
 thread.start()
-thread.join()
-#stream_process(file_dir, nb_frames_sent,dict,lock,)
+thread.join()'''
+stream_process(file_dir,nb_frames_sent,dict,lock,)
 
 # write into video file
 create_video(image_folder='../tmp/', video_name='output.mp4')
