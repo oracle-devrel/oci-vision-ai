@@ -33,6 +33,6 @@ Temporary Items
 .pem
 
 # ignore tmp/ directory
-tmp/*
+tmp/*.jpg
 # ignore output.mp4 file in output dir
 output/output.mp4
