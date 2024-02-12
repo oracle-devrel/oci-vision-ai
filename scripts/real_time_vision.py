@@ -21,19 +21,17 @@ from PIL import Image
 import shutil
 import moviepy.video.io.ImageSequenceClip
 from natsort import natsorted
+from multiprocessing.pool import ThreadPool
 
 
-parser = argparse.ArgumentParser(description='Process video file.')
-parser.add_argument('--file', type=str,
-                    default='H:/Downloads/tratraffic.mp4',
-                    help='Path to the video file'
-)
-args = parser.parse_args()
-file_dir = args.file
 
 ###################################################################################################
 # Variables
 ###################################################################################################
+API_LOCKED = 0
+
+SLEEP_PENALTY = 1
+
 desired_fps = 30
 
 # Specify the command to execute (fpvliberator will get data from usb, create the stdout binary stream, send it to ffmpeg that will analyze the stream and allow python to extract frames from it)
@@ -213,6 +211,7 @@ def draw_object_info(image_objects, img):
 # Analyze image / call to API OCI AI VISION / create a new augmented image
 ###################################################################################################
 def analyzeImage(img,frame_number,length,dict,lock):
+    global API_LOCKED
     time_request_elapsed = time.time()
     scale_percent = percent_of_original_size
     width = int(img.shape[1] * scale_percent / 100)
@@ -224,15 +223,40 @@ def analyzeImage(img,frame_number,length,dict,lock):
     im_b64 = base64.b64encode(im_bytes)
     image_data = im_b64.decode('utf-8')   
     image_details = oci.ai_vision.models.InlineImageDetails(data=image_data)
-    analysis_job = ai_vision_client.analyze_image(
-    analyze_image_details=oci.ai_vision.models.AnalyzeImageDetails(
-        features=[
-            oci.ai_vision.models.ImageClassificationFeature(
-                feature_type="OBJECT_DETECTION",
-                max_results=max_objects_to_detect_per_frame)
-                ],
-        image=image_details
-    ))
+    lock.acquire()
+    while True:
+        if API_LOCKED == 1:
+            time.sleep(180)
+
+        try:
+            analysis_job = ai_vision_client.analyze_image(
+            analyze_image_details=oci.ai_vision.models.AnalyzeImageDetails(
+                features=[
+                    oci.ai_vision.models.ImageClassificationFeature(
+                        feature_type="OBJECT_DETECTION",
+                        max_results=max_objects_to_detect_per_frame)
+                        ],
+                image=image_details
+            ))
+        except Exception as e:
+            print('[EXCEPTION] {}'.format(e))
+            lock.acquire()
+            API_LOCKED = 1 # stop launching more threads until we can make a proper request.
+            lock.release()
+            time.sleep(60)
+        finally:
+            analysis_job = ai_vision_client.analyze_image(
+            analyze_image_details=oci.ai_vision.models.AnalyzeImageDetails(
+                features=[
+                    oci.ai_vision.models.ImageClassificationFeature(
+                        feature_type="OBJECT_DETECTION",
+                        max_results=max_objects_to_detect_per_frame)
+                        ],
+                image=image_details
+            ))
+        
+        break
+
     res_json = json.loads(repr(analysis_job.data)) 
     time_request_elapsed = time.time() - time_request_elapsed
     logger.debug("Call OCI AI Vision API took :"  + str(time_request_elapsed)+ " for frame "+str(frame_number))
@@ -261,6 +285,24 @@ parser.add_argument('-t', default="", dest='config_profile', help='Config file s
 parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
 parser.add_argument('-ip', action='store_true', default=False, dest='is_instance_principals', help='Use Instance Principals for Authentication')
 parser.add_argument('-dt', action='store_true', default=False, dest='is_delegation_token', help='Use Delegation Token for Authentication')
+parser.add_argument('-f', '--file', type=str,
+                    default='H:/Downloads/tratraffic.mp4',
+                    help='Path to the video file'
+)
+# this argument will determine how you want to invoke the service: with no restrictions,
+# risking some frames being dropped due to rate limits on the OCI Vision API,
+# or going moderate (1 frame per second, which should never block due to API limits.)
+parser.add_argument('-m', '--mode', type=str,
+                    options=['crazy', 'moderate'],
+                    default='crazy',
+                    help='Path to the video file'
+)
+args = parser.parse_args()
+file_dir = args.file
+if args.mode == 'crazy':
+    SLEEP_PENALTY = 0
+else: SLEEP_PENALTY = 1
+
 cmd = parser.parse_args()
 
 ###################################################################################################
@@ -292,6 +334,8 @@ def stream_process(file_dir, nb_frames_sent,dict,lock) :
     success,image = vidcap.read()
     print('Video Properties: {}x{}'.format(image.shape[1], image.shape[0]))    
     thread_list = []
+    global API_LOCKED
+    global SLEEP_PENALTY
     while success:
         #if i < 100:
             #cv2.imshow('image', image)
@@ -299,22 +343,27 @@ def stream_process(file_dir, nb_frames_sent,dict,lock) :
             #if key == 27:#if ESC is pressed, exit loop
             #    cv2.destroyAllWindows()
             #    break
-            thread = threading.Thread(target=analyzeImage, args=(image,i,length,dict,lock,))
-            thread.start()
-            thread_list.append(thread)
-            nb_frames_sent= nb_frames_sent + 1        
-            #logger.debug('step: '+str(i)+' ,number of frames sent to OCI : '+str(nb_frames_sent)+' ,frame number : '+str(frame_number) + ' ,dict size : '+str(len(dict)))
-            print('[DECOMPOSE][{}/{}]: {}%'.format(i, length, ((i/length) * 100)))
+            if API_LOCKED == 0:
+                thread = threading.Thread(target=analyzeImage, args=(image,i,length,dict,lock,))
+                thread.start()
+                thread_list.append(thread)
+                nb_frames_sent= nb_frames_sent + 1        
+                #logger.debug('step: '+str(i)+' ,number of frames sent to OCI : '+str(nb_frames_sent)+' ,frame number : '+str(frame_number) + ' ,dict size : '+str(len(dict)))
+                print('[DECOMPOSE][{}/{}]: {}%'.format(i, length, ((i/length) * 100)))
 
-            #c2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file      
-            success, image = vidcap.read()
-            #try:
-            # img object is our image
-            #    pil_img = Image.fromarray(image)
-            #except (AttributeError):
-            #    count+= 1
-            #    continue
-            i += 1
+                #c2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file      
+                success, image = vidcap.read()
+                #try:
+                # img object is our image
+                #    pil_img = Image.fromarray(image)
+                #except (AttributeError):
+                #    count+= 1
+                #    continue
+                i += 1
+                time.sleep(SLEEP_PENALTY) # launch a request every second.
+            else:
+                time.sleep(179) # wait 180 seconds to try again.
+                API_LOCKED = 0
         #else: break
     # execution of stream_process needs to be
     # threaded and blocking, in order not to
@@ -363,6 +412,7 @@ def create_video(image_folder: str, video_name: str):
 ###################################################################################################
 # Program start
 ###################################################################################################
+
 initial_time=datetime.datetime.now()
 # Start Header
 print_header("VIDEO PROCESSER v1 Started at {}".format(str(initial_time.strftime("%Y-%m-%d %H:%M:%S"))))
