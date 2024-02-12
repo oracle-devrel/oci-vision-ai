@@ -66,6 +66,10 @@ Here’s an use case being solved with OCI Vision + Python:
 
 [App Pattern: OCI Vision Customized Object Detector in Python](https://www.youtube.com/watch?v=B9EmMkqnoGQ&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=2)
 
+## Physical Architecture
+
+![arch](./img/arch.PNG)
+
 ## Contributing
 
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
