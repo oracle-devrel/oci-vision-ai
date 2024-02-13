@@ -103,6 +103,8 @@ for x in range(len(objects)):
             objects[x]['confidence'],
             vertices
         ))
+
+        '''
         img = cv2.imread('../img/22WHITEGOD1-superJumbo-v2.jpg')
         draw_result = draw_object_info(objects, img)
         cv2.imshow('Image', draw_result)
@@ -111,6 +113,7 @@ for x in range(len(objects)):
         pilImage = Image.fromarray(im_rgb)
         pilImage.save('../img/output_object_detection_verify.png', 'PNG')
         cv2.waitKey(5) # show the image for 5 seconds and exit.
+        '''
 
 
 print('x'*10)

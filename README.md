@@ -2,7 +2,9 @@
 
 [![License: UPL](https://img.shields.io/badge/license-UPL-green)](https://img.shields.io/badge/license-UPL-green) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=oracle-devrel_oci-vision-ai)](https://sonarcloud.io/dashboard?id=oracle-devrel_oci-vision-ai)
 
-# Oracle Cloud Infrastructure Vision: A Quick Overview
+# OCI Vision: Object Detection in Python 
+
+## Overview of the service
 
 This is an overview of what Oracle Cloud Infrastructure Vision (a.k.a. OCI Vision) is, what it can provide, and how it can be used to your advantage as a company or individual trying to work with Artificial Intelligence.
 
@@ -12,6 +14,7 @@ OCI Vision is a versatile service that focuses on this. We (the users) can acces
 Generative AI Service
 
 Unlock the power of generative AI models equipped with advanced language comprehension for building the next generation of enterprise applications. Oracle Cloud Infrastructure (OCI) Generative AI is a fully managed service available via API to seamlessly integrate these versatile language models into a wide range of use cases, including writing assistance, summarization, and chat.
+
 - Using an OCI SDK: seamless interaction with your favorite programming language, without needing to create your own custom implementation / framework.
 - Using the OCI Console: easy-to-use, browser-based interface, by accessing your OCI account and using the services with the web interface provided by Oracle.
 - Using the OCI Command-Line Interface (CLI): Quick access and full functionality without programming. The CLI is a package that allows you to use a terminal to operate with OCI.
@@ -34,7 +37,7 @@ If you're unhappy with the set of elements being recognized in OCI Vision, or yo
 - Custom Object Detection: build models to detect custom objects with bounding box coordinates.
 - Custom Image Classification: create models to identify specific objects and scene-based features.
 
-## Document AI
+### Document AI
 
 > **Note**: Document AI features are available until January 1, 2024. Post that, they will be available in another OCI service called OCI Document Understanding.
 
@@ -55,6 +58,146 @@ Here's a list of supported file formats:
 Oracle Cloud Infrastructure Vision is a robust, flexible and cost-effective service for Computer Vision tasks. Oh, and extremely speedy!
 
 Whether you're dealing with images or documents, OCI Vision has all the tools you need, so make sure to give them a try.
+
+## Introduction
+
+This project teaches you how to develop an AI-infused application with OCI Vision. For this project, we will be using OCI's Python SDK to invoke the OCI Vision service and get results on detections. We have prepared several scripts, which can be found in the `scripts` folder, to make the appropriate calls to the service, regarding Image Classification and Object Detection.
+
+Finally, this demo also has an implementation of Object Detection with `ThreadPools`, to automate this process and allow you to process whole video files by separating the video into frames and calling the Object Detection endpoint for each frame; then, recomposing all frames into an output video file.
+
+## 0. Prerequisites and setup
+
+- Oracle Cloud Infrastructure (OCI) Account
+- [Oracle Cloud Infrastructure Documentation - Vision](https://docs.oracle.com/en-us/iaas/Content/vision/using/home.htm)
+- [Oracle Cloud Infrastructure (OCI) Generative AI Service SDK - Oracle Cloud Infrastructure Python SDK](https://pypi.org/project/oci/)
+- [Python 3.10](https://www.python.org/downloads/release/python-3100/)
+- [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
+- [OCI SDK](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm)
+
+Follow these links below to generate a config file and a key pair in your ~/.oci directory:
+
+- [SDK Config](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm)
+- [API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm)
+- [SDK CLI Installation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#configfile)
+
+After completion, you should have following 2 things in your ~/.oci directory:
+
+- A config file(where key file point to private key:key_file=~/.oci/oci_api_key.pem)
+- A key pair named oci_api_key.pem and oci_api_key_public.pem
+- Now make sure you change the reference of key file in config file (where key file point to private key:key_file=/YOUR_DIR_TO_KEY_FILE/oci_api_key.pem)
+
+> **Note**: if you have saved your OCI config file somewhere else, make sure to reference this location in `scripts/video_processing.py`, line 156:
+
+```python
+config = oci.config.from_file(
+             oci.config.DEFAULT_LOCATION,
+             (config_profile if config_profile else oci.config.DEFAULT_PROFILE),
+        )
+```
+
+And change it to:
+
+```python
+config = oci.config.from_file(
+             "<NEW_LOCATION>",
+             (config_profile if config_profile else oci.config.DEFAULT_PROFILE),
+        )
+```
+
+Finally, we install Python dependencies:
+
+```sh
+pip install -r requirements.txt
+```
+
+Then, we will create a Bucket in our OCI tenancy, and upload the pictures we want to analyze over there. This will ultimately depend on your use case, if you're trying to count the number of objects in an image (for traffic management), count people (for access management)... You will have to decide.
+
+## 1. Create OCI Bucket
+
+Let's create the Bucket:
+
+1. Open the **Navigation** menu in the Oracle Cloud console and click **Storage**. Under **Object Storage & Archive Storage**, click **Buckets**.
+
+2. On the **Buckets** page, select the compartment where you want to create the bucket from the **Compartment** drop-down list in the **List Scope** section. Make sure you are in the region where you want to create your bucket.
+
+3. Click **Create Bucket**.
+
+4. In the **Create Bucket** panel, specify the following:
+    - **Bucket Name:** Enter a meaningful name for the bucket.
+    - **Default Storage Tier:** Accept the default **Standard** storage tier. Use this tier for storing frequently accessed data that requires fast and immediate access. For infrequent access, choose the **Archive** storage tier.
+    - **Encryption:** Accept the default **Encrypt using Oracle managed keys**.
+
+5. Click **Create** to create the bucket.
+
+  ![The completed Create Bucket panel is displayed.](./img/create-bucket-panel.png)
+
+The new bucket is displayed on the **Buckets** page.
+
+  ![The new bucket is displayed on the Buckets page.](./img/bucket-created.png)
+
+## 1. (Optional) Running Image Classification with Object Storage
+
+We will run `scripts/image_classification.py`, but before, we need to obtain some info from our OCI Bucket and replace it in our script, line 37:
+
+![Information needed from bucket](./img/info_needed_bucket.PNG)
+
+Then, we can just run the following command:
+
+```bash
+python image_classification.py
+```
+
+To run OCI Vision's image classification against that image. These results will be in JSON format.
+
+## 2. (Optional) Running Object Detection with Object Storage
+
+We will repeat the steps to obtain the information as in step 1 above:
+
+![Information needed from bucket for Object Detection](./img/info_needed_bucket_object_detection.PNG)
+
+Then we can proceed and run the following command:
+
+```bash
+python object_detection.py
+```
+
+And we'll obtain a JSON object detailing detections.
+
+Optionally, you can uncomment the block starting in line 107, to visualize these results. Note that you must have the file locally and reference it in order to draw detections on top of the local image:
+
+![Uncomment this code block](./img/codeblock_uncomment.PNG)
+
+## 3. Batch processing any video with OCI Vision
+
+We have prepared two different scripts for you:
+
+- One is CPU intensive, and will try to use as many threads as possible as long as there are available resources in OCI
+- The other one will process the video frame-by-frame, and will take longer, but the computational load will be smaller.
+
+### Running CPU-friendly, slow mode
+
+```bash
+python slow_video.py [-h] --video-file VIDEO_FILE [--model-id MODEL_ID] 
+    [--output-frame-rate OUTPUT_FRAME_RATE] [--confidence-threshold CONFIDENCE_THRESHOLD] [-v]
+```
+
+For example, in my case, where I want only to draw objects above 80% model confidence, 30 frames per second (in my output video), and using the standard OCI Vision model (not a custom one), I would run:
+
+```bash
+python slow_video.py --video-file="H:/Downloads/my_video.mp4" --output-frame-rate="30" --confidence-threshold="80" -v
+```
+
+### Running CPU-intensive, fast mode
+
+```bash
+python fast_video.py --file FILE_PATH
+```
+
+For example:
+
+```bash
+python fast_video.py --file="H:/Downloads/my_video.mp4"
+```
 
 ## Demo
 
