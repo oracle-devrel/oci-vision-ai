@@ -8,11 +8,40 @@ import oci
 import logging
 import sys
 import ujson as json
+import cv2
+from PIL import ImageGrab, Image
+
+
 # Create a default config using DEFAULT profile in default location
 # Refer to
 # https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File
 # for more info
 config = oci.config.from_file()
+
+
+###################################################################################################
+# Draws the box around objects  / recognize their types  / send notifications 
+###################################################################################################
+def draw_object_info(image_objects, img):
+    for image_object in image_objects:
+        width = img.shape[1]
+        height = img.shape[0]
+        vertices = image_object["bounding_polygon"]["normalized_vertices"]
+        vertex_x = vertices[0]['x'] * width
+        vertex_y = vertices[0]['y'] * height
+        box_width = (vertices[2]['x'] - vertices[0]['x']) * width
+        box_height = (vertices[2]['y'] - vertices[0]['y']) * height
+        start_point = (int(vertex_x), int(vertex_y + box_height))
+        end_point = (int(vertex_x + box_width), int(vertex_y))
+        color = (255, 255, 255)
+        thickness = 2
+        police_size = 1.25
+        police_thickness = 3
+        cv2.rectangle(img, start_point, end_point, color, thickness)
+        cv2.putText(img, image_object["name"], (int(vertex_x + 15), int(vertex_y + box_height + 30)), cv2.FONT_HERSHEY_SIMPLEX, police_size, color, police_thickness, 2)
+    
+    return img
+
 
 # Enabling debug logging
 logging.getLogger('oci').setLevel(logging.DEBUG)
@@ -74,6 +103,17 @@ for x in range(len(objects)):
             objects[x]['confidence'],
             vertices
         ))
+
+        '''
+        img = cv2.imread('../img/22WHITEGOD1-superJumbo-v2.jpg')
+        draw_result = draw_object_info(objects, img)
+        cv2.imshow('Image', draw_result)
+
+        im_rgb = cv2.cvtColor(draw_result, cv2.COLOR_BGR2RGB)
+        pilImage = Image.fromarray(im_rgb)
+        pilImage.save('../img/output_object_detection_verify.png', 'PNG')
+        cv2.waitKey(5) # show the image for 5 seconds and exit.
+        '''
 
 
 print('x'*10)

@@ -31,3 +31,8 @@ Temporary Items
 .crt
 .csr
 .pem
+
+# ignore tmp/ directory
+tmp/*.jpg
+# ignore output.mp4 file in output dir
+output/output.mp4
