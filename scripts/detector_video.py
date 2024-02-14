@@ -14,7 +14,7 @@
 ##########################################################################
 # Info:
 # Analyze object present in video using OCI AI Vision service.
-usage: slow_video.py [-h] --video-file VIDEO_FILE [--model-id MODEL_ID] 
+usage: detector_video.py [-h] --video-file VIDEO_FILE [--model-id MODEL_ID] 
     [--output-frame-rate OUTPUT_FRAME_RATE] [--confidence-threshold CONFIDENCE_THRESHOLD] [-v]
 
 optional arguments:
