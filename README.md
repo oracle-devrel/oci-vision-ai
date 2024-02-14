@@ -171,32 +171,32 @@ Optionally, you can uncomment the block starting in line 107, to visualize these
 
 We have prepared two different scripts for you:
 
-- One is CPU intensive, and will try to use as many threads as possible as long as there are available resources in OCI
-- The other one will process the video frame-by-frame, and will take longer, but the computational load will be smaller.
+- One script will generate an output MP4 file with results inserted into it.
+- The other script will process the video frame-by-frame, process detections into a single `.json` file, but won't produce an output file. It's a way to learn how to invoke the service and aggregate results.
 
-### Running CPU-friendly, slow mode
+### Run Detector
 
 ```bash
-python slow_video.py [-h] --video-file VIDEO_FILE [--model-id MODEL_ID] 
+python detector_video.py [-h] --video-file VIDEO_FILE [--model-id MODEL_ID] 
     [--output-frame-rate OUTPUT_FRAME_RATE] [--confidence-threshold CONFIDENCE_THRESHOLD] [-v]
 ```
 
 For example, in my case, where I want only to draw objects above 80% model confidence, 30 frames per second (in my output video), and using the standard OCI Vision model (not a custom one), I would run:
 
 ```bash
-python slow_video.py --video-file="H:/Downloads/my_video.mp4" --output-frame-rate="30" --confidence-threshold="80" -v
+python detector_video.py --video-file="H:/Downloads/my_video.mp4" --output-frame-rate="30" --confidence-threshold="80" -v
 ```
 
-### Running CPU-intensive, fast mode
+### Create Output Video (CPU-intensive)
 
 ```bash
-python fast_video.py --file FILE_PATH
+python video_processer.py --file FILE_PATH
 ```
 
 For example:
 
 ```bash
-python fast_video.py --file="H:/Downloads/my_video.mp4"
+python video_processer.py --file="H:/Downloads/my_video.mp4"
 ```
 
 ## Demo
