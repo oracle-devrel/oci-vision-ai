@@ -196,7 +196,7 @@ python video_processer.py --file FILE_PATH
 For example:
 
 ```bash
-python video_processer.py --file="H:/Downloads/my_video.mp4"
+python video_processer.py --file="H:/Downloads/my_video.mp4" --mode="moderate"
 ```
 
 ## Demo
