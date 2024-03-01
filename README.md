@@ -69,7 +69,6 @@ Finally, this demo also has an implementation of Object Detection with `ThreadPo
 
 - Oracle Cloud Infrastructure (OCI) Account
 - [Oracle Cloud Infrastructure Documentation - Vision](https://docs.oracle.com/en-us/iaas/Content/vision/using/home.htm)
-- [Oracle Cloud Infrastructure (OCI) Generative AI Service SDK - Oracle Cloud Infrastructure Python SDK](https://pypi.org/project/oci/)
 - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
 - [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
 - [OCI SDK](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm)
