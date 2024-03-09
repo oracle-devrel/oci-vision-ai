@@ -200,13 +200,15 @@ python video_processer.py --file="H:/Downloads/my_video.mp4" --mode="moderate"
 
 ## Demo
 
-[OCI Vision Overview - Exploring the Service](https://www.youtube.com/watch?v=eyJm7OlaRBk&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=4)
+[AI Solutions - Customized Object Detection with AI Vision](https://www.youtube.com/watch?v=zg2C0VRtNCM&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=8)
 
 ## Tutorial
 
 Here’s an use case being solved with OCI Vision + Python:
 
 [App Pattern: OCI Vision Customized Object Detector in Python](https://www.youtube.com/watch?v=B9EmMkqnoGQ&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=2)
+
+[OCI Vision Overview - Exploring the Service](https://www.youtube.com/watch?v=eyJm7OlaRBk&list=PLPIzp-E1msraY9To-BB-vVzPsK08s4tQD&index=4)
 
 ## Physical Architecture
 
